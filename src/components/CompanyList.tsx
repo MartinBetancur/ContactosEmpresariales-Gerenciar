@@ -33,7 +33,7 @@ const CompanyList = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h2 className="text-3xl font-bold text-center mb-12 text-gerenciar-dark-blue">Empresas participantes</h2>
+      <h2 className="text-3xl font-bold text-center mb-12 text-gerenciar-dark-blue">Empresas Objetivo</h2>
       
       {companies.length > 0 ? (
         companies.map(company => (
