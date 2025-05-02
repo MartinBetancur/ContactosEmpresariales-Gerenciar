@@ -1,12 +1,29 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { useEffect } from 'react';
+import Hero from '@/components/Hero';
+import CompanyList from '@/components/CompanyList';
+import Footer from '@/components/Footer';
 
 const Index = () => {
+  // Scroll to companies section if URL has #empresas hash
+  useEffect(() => {
+    if (window.location.hash === '#empresas') {
+      const element = document.getElementById('empresas');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen flex flex-col">
+      <Hero />
+      
+      <section id="empresas" className="py-12 bg-gray-100">
+        <CompanyList />
+      </section>
+      
+      <Footer />
     </div>
   );
 };
