@@ -1,6 +1,4 @@
-
 import { useState } from 'react';
-import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Company, SectorType } from '@/types';
@@ -41,6 +39,9 @@ const CompanyCard: React.FC<CompanyCardProps> = ({ company, onContact }) => {
     }
   };
 
+  // Make sure contactInfo exists before trying to access its properties
+  const contactInfo = company.contactInfo || {};
+
   return (
     <div className="company-card p-6 mb-8">
       <div className="flex flex-col md:flex-row gap-6">
@@ -57,27 +58,27 @@ const CompanyCard: React.FC<CompanyCardProps> = ({ company, onContact }) => {
             
             {/* Contact Info */}
             <div className="flex flex-wrap gap-3">
-              {company.contactInfo.email && (
+              {contactInfo.email && (
                 <a 
-                  href={`mailto:${company.contactInfo.email}`} 
+                  href={`mailto:${contactInfo.email}`} 
                   className="flex items-center gap-1 text-gerenciar-blue hover:text-gerenciar-dark-blue transition-colors"
                   aria-label="Email"
                 >
                   <Mail className="h-5 w-5" />
                 </a>
               )}
-              {company.contactInfo.phone && (
+              {contactInfo.phone && (
                 <a 
-                  href={`tel:${company.contactInfo.phone}`} 
+                  href={`tel:${contactInfo.phone}`} 
                   className="flex items-center gap-1 text-gerenciar-blue hover:text-gerenciar-dark-blue transition-colors"
                   aria-label="Teléfono"
                 >
                   <Phone className="h-5 w-5" />
                 </a>
               )}
-              {company.contactInfo.whatsapp && (
+              {contactInfo.whatsapp && (
                 <a 
-                  href={`https://wa.me/${company.contactInfo.whatsapp}`} 
+                  href={`https://wa.me/${contactInfo.whatsapp}`} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center gap-1 text-gerenciar-blue hover:text-gerenciar-dark-blue transition-colors"
@@ -86,9 +87,9 @@ const CompanyCard: React.FC<CompanyCardProps> = ({ company, onContact }) => {
                   <MessageCircle className="h-5 w-5" />
                 </a>
               )}
-              {company.contactInfo.instagram && (
+              {contactInfo.instagram && (
                 <a 
-                  href={`https://instagram.com/${company.contactInfo.instagram}`} 
+                  href={`https://instagram.com/${contactInfo.instagram}`} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center gap-1 text-gerenciar-blue hover:text-gerenciar-dark-blue transition-colors"
@@ -97,9 +98,9 @@ const CompanyCard: React.FC<CompanyCardProps> = ({ company, onContact }) => {
                   <Instagram className="h-5 w-5" />
                 </a>
               )}
-              {company.contactInfo.facebook && (
+              {contactInfo.facebook && (
                 <a 
-                  href={`https://facebook.com/${company.contactInfo.facebook}`} 
+                  href={`https://facebook.com/${contactInfo.facebook}`} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center gap-1 text-gerenciar-blue hover:text-gerenciar-dark-blue transition-colors"
@@ -108,9 +109,9 @@ const CompanyCard: React.FC<CompanyCardProps> = ({ company, onContact }) => {
                   <Facebook className="h-5 w-5" />
                 </a>
               )}
-              {company.contactInfo.linkedin && (
+              {contactInfo.linkedin && (
                 <a 
-                  href={`https://linkedin.com/in/${company.contactInfo.linkedin}`} 
+                  href={`https://linkedin.com/in/${contactInfo.linkedin}`} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center gap-1 text-gerenciar-blue hover:text-gerenciar-dark-blue transition-colors"

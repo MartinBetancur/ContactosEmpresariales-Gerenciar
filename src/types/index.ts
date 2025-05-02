@@ -17,5 +17,5 @@ export type Company = {
   sector: SectorType;
   image: string;
   contactedBy: string | null;
-  contactInfo: ContactInfo;
+  contactInfo?: ContactInfo;
 };

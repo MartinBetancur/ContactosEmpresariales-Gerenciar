@@ -1,47 +1,44 @@
-
 import CountdownTimer from './CountdownTimer';
 
 const Hero = () => {
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background image with overlay */}
+      {/* Imagen de fondo con overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center z-0" 
-        style={{ 
-          backgroundImage: `url('/lovable-uploads/e1ff73c7-d6fa-404d-8acd-89d5eb75067d.png')` 
-        }}
+        style={{ backgroundImage: `url('/assets/logistica-gerenciar.png')` }}
       />
-      <div className="hero-overlay absolute inset-0 z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-[#4f46e5]/85 via-[#9333ea]/60 to-[#f9fafb]/50 z-10" />
 
-      {/* Content */}
-      <div className="relative z-20 container mx-auto px-4 text-center">
+      {/* Temporizador (parte superior) */}
+      <div className="absolute top-0 left-0 w-full pt-6 md:pt-10 z-9999">
         <CountdownTimer />
+      </div>
 
-        <div className="mt-8 mb-10 animate-pulse-light">
-          {/* EXPO GERENCIAR Logo placeholder */}
-          <div className="max-w-3xl mx-auto">
-            <img 
-              src="https://placehold.co/800x200/ffffff/5856D6?text=EXPO+GERENCIAR&font=montserrat" 
-              alt="EXPO GERENCIAR" 
-              className="w-full h-auto"
-            />
-            <h2 className="text-white text-xl md:text-3xl mt-4">TRANSFORMA IMPACTA INNOVA</h2>
-            <p className="text-white text-sm mt-1">12ª VERSIÓN</p>
-          </div>
+      {/* Contenido principal */}
+      <div className="relative z-20 container mx-auto px-4 text-center text-white">
+        <div className="mt-28 mb-8">
+          <img 
+            src="/assets/logo.png" 
+            alt="Gerenciar 2025 Logo" 
+            className="mx-auto max-h-44 md:max-h-52"
+          />
         </div>
 
-        <div className="mt-12 mb-4">
-          <h2 className="text-white text-3xl md:text-5xl font-bold">22 - 23 de Mayo</h2>
-        </div>
+        <h2 className="text-xl md:text-4xl font-semibold mb-6">
+          22 - 23 de Mayo
+        </h2>
 
         <div className="mt-8 max-w-3xl mx-auto bg-black/30 backdrop-blur-sm p-6 rounded-xl">
-          <p className="text-white text-base md:text-xl">
+          <p className="text-xl md:text-2xl font-medium">
             ¡Es momento de actuar! Contactemos, vendamos y llevemos este evento al 
-            <span className="font-bold"> SOLD OUT </span> 
-            que todos queremos alcanzar.
+            <strong> SOLD OUT </strong> que todos queremos alcanzar.
           </p>
         </div>
       </div>
+
+      {/* Gradiente inferior para efecto visual */}
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent z-10"></div>
     </div>
   );
 };

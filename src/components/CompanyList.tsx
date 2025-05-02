@@ -9,7 +9,7 @@ const CompanyList = () => {
   if (loading) {
     return (
       <div className="container mx-auto px-4 py-8">
-        <h2 className="text-3xl font-bold text-center mb-12 text-gerenciar-dark-blue">Empresas participantes</h2>
+        <h2 className="text-3xl font-bold text-center mb-12 text-gerenciar-dark-blue">Empresas Objetivo</h2>
         {[1, 2, 3].map((index) => (
           <div key={index} className="mb-8 bg-white p-6 rounded-lg shadow">
             <div className="flex flex-col md:flex-row gap-6">
